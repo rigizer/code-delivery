@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import firebase from './firebase';
+
+const db = firebase.firestore();
 
 function App() {
+  db.collection('users')
+    .doc('testUserId')
+    .get()
+    .then(doc => {
+        alert(`${doc.data().email}`);
+    });
   return (
     <div className="App">
       <header className="App-header">
