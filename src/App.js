@@ -1,6 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import firebase from './firebase';
+import Home from './page/home';
+import Info from './page/info';
 
 const db = firebase.firestore();
 
@@ -12,22 +14,23 @@ function App() {
         alert(`${doc.data().email}`);
     });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Router>
+      <header>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/info">
+          <button>Info</button>
+        </Link>
       </header>
-    </div>
+
+      <main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/info" component={Info} />
+        </Switch>
+      </main>
+    </Router>
   );
 }
 
