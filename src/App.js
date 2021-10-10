@@ -2,7 +2,10 @@ import React from 'react';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import firebase from './firebase';
 import Home from './page/home';
-import Info from './page/info';
+import login from './page/login/login';
+import chat from './page/chat/chat';
+import party from './page/party/party';
+import userInfo from './page/userInfo/userInfo';
 
 const db = firebase.firestore();
 
@@ -19,15 +22,27 @@ function App() {
         <Link to="/">
           <button>Home</button>
         </Link>
-        <Link to="/info">
-          <button>Info</button>
+        <Link to="/login">
+          <button>login</button>
+        </Link>
+        <Link to="/chat">
+          <button>chat</button>
+        </Link>
+        <Link to="/party">
+          <button>party</button>
+        </Link>
+        <Link to="/userInfo">
+          <button>userInfo</button>
         </Link>
       </header>
 
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/info" component={Info} />
+          <Route exact path="/login" component={login} />
+          <Route exact path="/chat" component={chat} />
+          <Route exact path="/party" component={party} />
+          <Route exact path="/userInfo" component={userInfo} />
         </Switch>
       </main>
     </Router>
