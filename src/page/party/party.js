@@ -1,9 +1,12 @@
 import React from 'react';
+import './party.css'
 
 const party = () => {
     return (
-        <div>
-            <h2>party</h2>
+        <div class="party">
+            <div class="party_main">
+                <h2>party</h2>
+            </div>
         </div>
     );
 };

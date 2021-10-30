@@ -1,0 +1,16 @@
+.party {
+  max-width: 960px;
+}
+
+.party_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+}
+/*# sourceMappingURL=party.css.map */
