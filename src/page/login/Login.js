@@ -1,18 +1,22 @@
 import React, { useEffect } from 'react';
 import firebase from '../../firebase';
+import { createStore } from 'redux';
 
 const Login = () => {
 
     console.log('페이지 로드');
     let loginVO = null;
-  
+    let store = null;
+    console.log(loginVO);
+    console.log(firebase.auth().currentUser);
     // 구글 로그인 이벤트
     const onGoogleClick = async (event) => {
-        doLogin();  
+        doLogin();   
     };
     // 로그아웃 이벤트
     const onLogoutClick = async (event) => {
         doLogout(); 
+        window.location.reload();    
     };
     
    
@@ -27,17 +31,14 @@ const Login = () => {
                 firebase.auth()
                     .signInWithPopup(provider)
                     .then(() => {
-                        console.log('로그인 진행 - 팝업');  
+                        window.location.reload();    
                     });
                 return false; 
             }
-
-           
         });
     };
     // 로그아웃 함수
     const doLogout = function() {
-        if(loginVO == null) return false;
         firebase.auth().signOut();
     };
 
@@ -53,34 +54,27 @@ const Login = () => {
             console.log('displayName : ' + displayName + ', email : ' + email + ', photoUrl : ' + photoURL + ', emailVerified : ' + emailVerified + ', uid : ' + uid);
           }
     };
-
     useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
             if(user) {
-                loginVO = user;
-                console.log('로그인 상태');
-            } else {
-                console.log('로그아웃 상태');
-                
+                //document.getElementsByClassName('LoginBtn').remove();
+                document.getElementById('LoginBtn').remove();
+            } else {            
+                document.getElementById('LogoutBtn').remove(); 
             }
         })
     }, [])
 
-    console.log('로그인 분기');
-    console.log(firebase.auth().currentUser);
-    if(loginVO == null) {       
     return (
-        <div className="App">
-        <button name="google" onClick={onGoogleClick}>구글 계정으로 로그인</button>        
+        <div>
+            <div className="LoginBtn" id="LoginBtn">
+                <button name="google" onClick={onGoogleClick}>구글 계정으로 로그인</button>      
+            </div>
+            <div className="LogoutBtn" id="LogoutBtn">
+                <button name="google" onClick={onLogoutClick}>로그아웃</button>      
+            </div>
         </div>
     );
-    } else {
-        return (
-            <div className="App">
-               <button name="google" onClick={onLogoutClick}>로그아웃</button>
-            </div>
-        );
-    }
     
 };
 
