@@ -1,7 +1,7 @@
 import React from 'react';
 import './party.css'
 
-const party = () => {
+const Party = () => {
     return (
         <div class="party">
             <div class="party_main">
@@ -11,4 +11,4 @@ const party = () => {
     );
 };
 
-export default party;
+export default Party;

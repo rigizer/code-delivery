@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import firebase from './firebase';
-import Menu from './page/menu/menu';
+import Menu from './page/menu/Menu';
 
 const db = firebase.firestore();
 

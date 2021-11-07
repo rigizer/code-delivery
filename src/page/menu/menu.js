@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import firebase from '../../firebase';
-import Login from '../login/login';
-import Home from '../home';
-import chat from '../chat/chat';
-import party from '../party/party';
-import userInfo from '../userInfo/userInfo';
-const menu = () => {
+import Login from '../login/Login';
+import Home from '../Home';
+import chat from '../chat/Chat';
+import party from '../party/Party';
+import userInfo from '../userInfo/UserInfo';
+const Menu = () => {
 
     //const topMenu = ''
     return (
@@ -40,4 +40,4 @@ const menu = () => {
     );
 };
 
-export default menu;
+export default Menu;
