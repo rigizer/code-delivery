@@ -5,7 +5,7 @@ const Party = () => {
     return (
         <div class="party">
             <div class="party_main">
-                <h2>party</h2>
+                <div>party</div>
             </div>
         </div>
     );

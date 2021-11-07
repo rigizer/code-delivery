@@ -1,6 +1,12 @@
 .party {
-    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     &_main {
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

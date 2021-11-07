@@ -1,7 +1,34 @@
+@media (max-width: 575px){
+  html {
+      max-width: 320px;
+  }
+}
+@media (min-width: 576px){
+  html {
+      max-width: 540px;
+  }
+}
+@media (min-width: 768px){
+  html {
+      max-width: 720px;
+  }
+}
+@media (min-width: 992px){
+  html {
+      max-width: 960px;
+  }
+}
+@media (min-width: 1200px){
+  html {
+      max-width: 1140px;
+  }
+}
 html {
   text-align: center;
   padding-top: 10%;
   background-color: #f6ddff;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
