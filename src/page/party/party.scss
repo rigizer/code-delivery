@@ -24,9 +24,11 @@
                 display: flex;
                 align-items: center;
                 place-content: space-evenly;
+                height: 70px;
+                margin-top: 10px;
                 &-select {
                     width: 20%;
-                    height: 50px;
+                    height: 30px;
                     border: none;
                 }
                 &-search {
