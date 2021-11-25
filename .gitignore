@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
+
+# css build file
+src/page/**/*.css
+src/page/**/*.css.map
